@@ -1,32 +1,32 @@
 /*2.Написать функцию reverse, которая принимает в качестве параметров массив и возвращает новый, 
 точно такой же, только с элементами в обратном порядке.*/
-// const arrOfValues = [1, 2, 3, 4, 5];
+const arrOfValues = [1, 2, 3, 4, 5];
 
-// function arrReverse(arr) {
+function arrReverse(arr) {
 
-//     if (!Array.isArray(arr)) {
-//         return "Please, enter array!";
-//     }
+    if (!Array.isArray(arr)) {
+        return "Please, enter array!";
+    }
 
-//     let newArr = [];
+    let newArr = [];
 
-//     for (let i = arr.length - 1; i >= 0; i--) {
-//         newArr.push(arr[i]);
-//     }
+    for (let i = arr.length - 1; i >= 0; i--) {
+        newArr.push(arr[i]);
+    }
 
-//     return newArr;
-// }
-// console.log(arrReverse(arrOfValues));
+    return newArr;
+}
+console.log(arrReverse1(arrOfValues));
 
 /********************************************/
-// const arrOfValues = [1, 2, 3, 4, 5];
+const arrOfValues1 = [1, 2, 3, 4, 5];
 
-// function arrReverse(arr) {
+function arrReverse1(arr1) {
 
-//     if(!Array.isArray(arr)){
-//         return "Please, enter array!"
-//     }
+    if(!Array.isArray(arr1)){
+        return "Please, enter array!"
+    }
 
-//     return arr.reverse();
-// }
-// console.log(arrReverse(arrOfValues));
+    return arr1.reverse();
+}
+console.log(arrReverse1(arrOfValues1));
