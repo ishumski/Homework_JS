@@ -10,12 +10,7 @@ function compact(arr) {
         if (!Array.isArray(arr)) {
             return "Please, enter array!";
         }
-        if (typeof arr[i] != "boolean" &&
-            typeof arr[i] != "undefined" &&
-            arr[i] != 0 &&
-            arr[i] != " " &&
-            arr[i] != null) {
-
+        if (typeof arr[i] != "undefined" && arr[i] != false && arr[i] != null) {
             newArr.push(arr[i]);
         }
     }
@@ -30,6 +25,6 @@ function compact(arr2) {
     if (!Array.isArray(arr2)) {
         return "Please, enter array!";
     }
-    return arr2.filter(item => typeof item != "boolean" && typeof item != "undefined" && item != 0 && item != " " && item != null);
+    return arr2.filter(item => typeof item != "undefined" && item != false && item != null);
 }
 console.log(compact(array2));
