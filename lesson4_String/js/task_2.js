@@ -12,13 +12,13 @@ function strip(str) {
         return ("Please, enter string");
     }
 
-    newArr = [];
-    str = str.split(" ");
+    let newArr = [];
+    newStr = str.split(" ");
 
-    for (let i = 0; i < str.length; i++) {
+    for (let i = 0; i < newStr.length; i++) {
 
-        if (str[i] != "") {
-            newArr.push(str[i]);
+        if (newStr[i] != "") {
+            newArr.push(newStr[i]);
         }
     }
 
@@ -27,7 +27,7 @@ function strip(str) {
 }
 console.log(strip(stripStr));
 
-/*СПОСОБ 2*/
+// /*СПОСОБ 2*/
 const stripStr = "   ram ambah aramam b urum    ";
 function strip(str) {
     if (typeof str != "string") {
