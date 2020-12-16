@@ -10,36 +10,46 @@ words - список слов использованных в игре и gameOv
 */
 
 class GameOfWords {
-    constructor(words, gameOver) {
-         this.words = [];
-         this.gameOver = false;
+    constructor() {
+        this.words = [];
+        this.gameOver = false;
     }
-
     play(word) {
-        const lastSymbol = word.length-1;
-        const firstSymbol = word[0];
-        if (word.toLowerCase().trim().split(" ").length === 1) {
-            return [...this.words, `${word}`];
+        if (this.gameOver) {
+            throw new Error("game is over");
         }
-        if (word[lastSymbol] === firstSymbol) {
-           
-        } 
-        return "game over!";
-        
+        const trimmedWord = word.trim().toLowerCase();
+
+        if (trimmedWord.split(" ").length > 1 || !trimmedWord.length) {
+            return "one word";
+        }
+
+        const lastWord = this.words[this.words.length - 1];
+        if ((lastWord && lastWord[lastWord.length - 1] !== trimmedWord[0]) || this.words.includes(trimmedWord)) {
+            this.gameOver = true;
+            return "game over";
+        }
+        this.words = [...this.words, trimmedWord];
+        return this.words;
+
     }
     restart() {
-
+        this.words = [];
+        this.gameOver = false;
+        return "this is restarted";
     }
-
-
 }
 const game = new GameOfWords();
+try {
+    GameOfWords.play("word");
+} catch (error) {
+    alert(error.message);
+} finally {
+    // код выполняется в любом случае(не важно есть ошибка или нет)
+}
+
 console.log(game.play("apple"));
 console.log(game.play("ear"));
-
-
-
-
 
 // Пример:
 // game = GameOfWords.new()
